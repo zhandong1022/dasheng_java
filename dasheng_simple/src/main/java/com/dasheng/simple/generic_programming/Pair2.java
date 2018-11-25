@@ -1,4 +1,4 @@
-package com.dasheng.generic_programming.generic_class;
+package com.dasheng.simple.generic_programming;
 
 /**
  *泛型类

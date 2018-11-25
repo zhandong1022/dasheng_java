@@ -10,12 +10,12 @@ import com.dasheng.basic.vo.BasicGenericProgrammingVO;
 public class ArrayUtils {
 
     /**
-     * Gets the minimum and maxmum of an array of strings
+     * Gets the min and max of an array of strings
      *
      * @param valueList  an array of string
      * @return
      */
-    public static BasicGenericProgrammingVO minMax(String[] valueList){
+    public static BasicGenericProgrammingVO maxMin(String[] valueList){
         if(checkIsEmpy(valueList)){
             return null;
         }

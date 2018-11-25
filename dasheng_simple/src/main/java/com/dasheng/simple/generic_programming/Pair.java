@@ -1,4 +1,4 @@
-package com.dasheng.generic_programming.generic_class;
+package com.dasheng.simple.generic_programming;
 
 import lombok.Data;
 
@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class Pair<T> {
 
-    
+
 
     private T first;
     private T Second;
