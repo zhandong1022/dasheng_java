@@ -1,5 +1,7 @@
 package com.dasheng.generic_programming.generic_class;
 
+import com.dasheng.basic.vo.BasicGenericProgrammingVO;
+import com.dasheng.common.util.ArrayUtils;
 import org.junit.Test;
 
 /**
@@ -14,8 +16,9 @@ public class GenericClassTest {
     @Test
     public void compareStr(){
         String[] words = {"Mary","had","a","little","lamb"};
-        Pair<String> mm = ArrayAlg
-
+        BasicGenericProgrammingVO<String> mm = ArrayUtils.minMax(words);
+        System.out.println("最大值："+mm.getFirst());
+        System.out.println("最小值："+mm.getSecond());
     }
 
 }
