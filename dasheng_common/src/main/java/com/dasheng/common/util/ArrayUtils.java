@@ -2,6 +2,8 @@ package com.dasheng.common.util;
 
 import com.dasheng.basic.vo.BasicGenericProgrammingVO;
 
+import java.io.Serializable;
+
 /**
  *
  * 数据工具
@@ -15,12 +17,12 @@ public class ArrayUtils {
      * @param valueList  an array of string
      * @return
      */
-    public static BasicGenericProgrammingVO maxMin(String[] valueList){
-        if(checkIsEmpy(valueList)){
+    public static <T extends Comparable> BasicGenericProgrammingVO maxMin(T[] valueList){
+        if(checkIsEmpty(valueList)){
             return null;
         }
-        String min = valueList[0];
-        String max = valueList[0];
+        T min = valueList[0];
+        T max = valueList[0];
         for(int i=0;i<valueList.length;i++){
             if(min.compareTo(valueList[i])>0){
                 min=valueList[i];
@@ -38,10 +40,40 @@ public class ArrayUtils {
      * @param arrayList an array of Object
      * @return
      */
-    public static boolean checkIsEmpy(Object[] arrayList){
+    public static boolean checkIsEmpty(Object[] arrayList){
         if(arrayList==null||arrayList.length==0){
             return true;
         }
         return false;
+    }
+
+    /**
+     * get the middle value of an array
+     * @param a
+     * @param <T>
+     * @return
+     */
+    public static <T> T getMiddleValue(T... a){
+        return a[a.length/2];
+    }
+
+    /**
+     * get min value of an array
+     * @param array
+     * @param <T>
+     * @return
+     */
+    public static <T extends Comparable & Serializable> T getMin(T... array){
+        if(checkIsEmpty(array)){
+            return null;
+        }
+        T smallest = array[0];
+        for(int i =0;i<array.length;i++){
+            if(smallest.compareTo(array[i])>0) {
+                smallest=array[i];
+            }
+
+        }
+        return smallest;
     }
 }

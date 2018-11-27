@@ -13,14 +13,12 @@ public class BasicGenericProgrammingVO<T> {
     public BasicGenericProgrammingVO() {
     }
 
-    public BasicGenericProgrammingVO(T maxValue, T minValue) {
-        this.first = maxValue;
-        this.second = minValue;
+    public BasicGenericProgrammingVO(T first, T second) {
+        this.first = first;
+        this.second = second;
     }
-
 
     private T first;
     private T second;
-
 
 }
